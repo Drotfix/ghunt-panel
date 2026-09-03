@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+.venv-*/
+env/
+
+# Env / secrets
+.env
+.env.*
+
+# GHunt's own local credentials (never commit these)
+creds.m
+.malfrats/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp

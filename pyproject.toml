@@ -1,0 +1,38 @@
+[project]
+name = "ghunt-panel"
+version = "0.1.0"
+description = "A local, self-hosted web UI for the GHunt OSINT CLI."
+readme = "README.md"
+license = { text = "AGPL-3.0-or-later" }
+requires-python = ">=3.10"
+authors = [
+    { name = "ghunt-panel contributors" },
+]
+keywords = ["osint", "ghunt", "google", "security", "investigation"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Environment :: Web Environment",
+    "Topic :: Security",
+]
+dependencies = [
+    "flask>=3.0",
+    "ghunt>=2.3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mxrch/GHunt"
+Upstream = "https://github.com/mxrch/GHunt"
+
+[project.scripts]
+ghunt-panel = "ghunt_panel.app:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["ghunt_panel"]
+
+[tool.setuptools.package-data]
+ghunt_panel = ["templates/*.html", "static/*.css", "static/*.js"]
