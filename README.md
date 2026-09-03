@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/g-mark.png" alt="GHunt" height="88"></p>
+
 # ghunt-panel
 
 A local, self-hosted web UI for [GHunt](https://github.com/mxrch/GHunt) — mxrch's OSINT

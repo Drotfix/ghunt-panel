@@ -35,4 +35,4 @@ build-backend = "setuptools.build_meta"
 packages = ["ghunt_panel"]
 
 [tool.setuptools.package-data]
-ghunt_panel = ["templates/*.html", "static/*.css", "static/*.js"]
+ghunt_panel = ["templates/*.html", "static/*.css", "static/*.js", "static/*.png"]

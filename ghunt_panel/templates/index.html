@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ghunt-panel</title>
+<link rel="icon" href="/static/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" rel="stylesheet">
 <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
@@ -11,8 +16,8 @@
 
   <header class="topbar">
     <div class="brand">
-      <span class="brand-glyph">&gt;_</span>
-      <span class="brand-text">ghunt<span class="accent">-panel</span></span>
+      <img src="/static/logo.png" alt="GHunt" class="brand-logo">
+      <span class="brand-text">Panel</span>
     </div>
     <div class="statusline" id="status">
       <span class="dot" id="statusDot"></span>
@@ -22,94 +27,94 @@
 
   <div class="body">
     <nav class="sidenav" id="nav">
-      <div class="nav-group-label">osint modules</div>
-      <button class="nav-item active" data-tab="email"><span class="nav-idx">01</span>email</button>
-      <button class="nav-item" data-tab="gaia"><span class="nav-idx">02</span>gaia id</button>
-      <button class="nav-item" data-tab="drive"><span class="nav-idx">03</span>drive</button>
-      <button class="nav-item" data-tab="geolocate"><span class="nav-idx">04</span>geolocate</button>
-      <button class="nav-item" data-tab="spiderdal"><span class="nav-idx">05</span>spiderdal</button>
-      <div class="nav-group-label">session</div>
-      <button class="nav-item" data-tab="login"><span class="nav-idx">06</span>auth</button>
+      <div class="nav-group-label">Модули</div>
+      <button class="nav-item active" data-tab="email"><span class="material-symbols-outlined nav-icon">mail</span>Email</button>
+      <button class="nav-item" data-tab="gaia"><span class="material-symbols-outlined nav-icon">badge</span>Gaia ID</button>
+      <button class="nav-item" data-tab="drive"><span class="material-symbols-outlined nav-icon">folder</span>Drive</button>
+      <button class="nav-item" data-tab="geolocate"><span class="material-symbols-outlined nav-icon">location_on</span>Geolocate</button>
+      <button class="nav-item" data-tab="spiderdal"><span class="material-symbols-outlined nav-icon">hub</span>SpiderDAL</button>
+      <div class="nav-group-label">Сессия</div>
+      <button class="nav-item" data-tab="login"><span class="material-symbols-outlined nav-icon">vpn_key</span>Вход</button>
     </nav>
 
     <main class="content">
 
       <section class="panel active" data-panel="email">
         <div class="panel-head">
-          <div class="cmd-line"><span class="prompt">$</span> ghunt email <span class="arg">&lt;address&gt;</span></div>
+          <h1 class="panel-title">Поиск по email</h1>
           <p class="hint">Найти Google-аккаунт, привязанный к email-адресу.</p>
         </div>
         <form class="form" data-endpoint="/api/email" data-field="email">
           <input type="email" name="email" placeholder="someone@gmail.com" required autocomplete="off" spellcheck="false">
-          <button type="submit">Run</button>
+          <button type="submit">Найти</button>
         </form>
         <div class="result" data-result="email"></div>
       </section>
 
       <section class="panel" data-panel="gaia">
         <div class="panel-head">
-          <div class="cmd-line"><span class="prompt">$</span> ghunt gaia <span class="arg">&lt;id&gt;</span></div>
+          <h1 class="panel-title">Поиск по Gaia ID</h1>
           <p class="hint">Внутренний числовой идентификатор Google-аккаунта.</p>
         </div>
         <form class="form" data-endpoint="/api/gaia" data-field="gaia_id">
           <input type="text" name="gaia_id" placeholder="1234567890123456789" required autocomplete="off" spellcheck="false">
-          <button type="submit">Run</button>
+          <button type="submit">Найти</button>
         </form>
         <div class="result" data-result="gaia"></div>
       </section>
 
       <section class="panel" data-panel="drive">
         <div class="panel-head">
-          <div class="cmd-line"><span class="prompt">$</span> ghunt drive <span class="arg">&lt;file_id&gt;</span></div>
+          <h1 class="panel-title">Файл или папка Drive</h1>
           <p class="hint">ID берётся из ссылки на файл или папку Google Drive.</p>
         </div>
         <form class="form" data-endpoint="/api/drive" data-field="file_id">
           <input type="text" name="file_id" placeholder="1N__vVu4c9fCt4EHxfthUNzVOs_tp8l6tHcMBnpOZv_M" required autocomplete="off" spellcheck="false">
-          <button type="submit">Run</button>
+          <button type="submit">Найти</button>
         </form>
         <div class="result" data-result="drive"></div>
       </section>
 
       <section class="panel" data-panel="geolocate">
         <div class="panel-head">
-          <div class="cmd-line"><span class="prompt">$</span> ghunt geolocate <span class="arg">-b &lt;bssid&gt;</span></div>
+          <h1 class="panel-title">Геолокация по BSSID</h1>
           <p class="hint">Геолокация Wi-Fi точки доступа по MAC-адресу (BSSID).</p>
         </div>
         <form class="form" data-endpoint="/api/geolocate" data-field="bssid">
           <input type="text" name="bssid" placeholder="30:86:2d:c4:29:d0" required autocomplete="off" spellcheck="false">
-          <button type="submit">Run</button>
+          <button type="submit">Найти</button>
         </form>
         <div class="result" data-result="geolocate"></div>
       </section>
 
       <section class="panel" data-panel="spiderdal">
         <div class="panel-head">
-          <div class="cmd-line"><span class="prompt">$</span> ghunt spiderdal <span class="arg">[-p pkg] [-f fp] [-u url]</span></div>
+          <h1 class="panel-title">SpiderDAL</h1>
           <p class="hint">Поиск связанных сайтов и Android-пакетов через Digital Asset Links. Поля можно заполнять частично.</p>
         </div>
         <form class="form multi" data-endpoint="/api/spiderdal" data-fields="package,fingerprint,url">
           <input type="text" name="package" placeholder="package — com.squareup.cash" autocomplete="off" spellcheck="false">
           <input type="text" name="fingerprint" placeholder="fingerprint — SHA256 certificate" autocomplete="off" spellcheck="false">
           <input type="text" name="url" placeholder="url — https://cash.app" autocomplete="off" spellcheck="false">
-          <button type="submit">Run</button>
+          <button type="submit">Найти</button>
         </form>
         <div class="result" data-result="spiderdal"></div>
       </section>
 
       <section class="panel" data-panel="login">
         <div class="panel-head">
-          <div class="cmd-line"><span class="prompt">$</span> ghunt login</div>
+          <h1 class="panel-title">Авторизация</h1>
           <p class="hint">Выберите способ получения токена сессии, вставьте значение и запустите вход.</p>
         </div>
 
         <details class="guide" open>
-          <summary><span class="guide-tag">01</span> Расширение GHunt Companion <span class="guide-note">— самый быстрый способ</span></summary>
+          <summary><span class="guide-tag">1</span> Расширение GHunt Companion <span class="guide-note">— самый быстрый способ</span></summary>
           <ol>
             <li>Установите расширение:
               <a href="https://chrome.google.com/webstore/detail/ghunt-companion/dpdcofblfbmmnikcbmmiakkclocadjab" target="_blank" rel="noopener">Chrome</a>
               /
               <a href="https://addons.mozilla.org/en-US/firefox/addon/ghunt-companion/" target="_blank" rel="noopener">Firefox</a>
-              <span class="note">(в Chrome Web Store бывает недоступно — используйте Firefox или способ 02)</span>
+              <span class="note">(в Chrome Web Store бывает недоступно — используйте Firefox или способ 2)</span>
             </li>
             <li>Залогиньтесь в свой Google-аккаунт в том же браузере, где стоит расширение.</li>
             <li>Нажмите иконку расширения — оно подключится к аккаунту и покажет base64-строку.</li>
@@ -118,7 +123,7 @@
         </details>
 
         <details class="guide">
-          <summary><span class="guide-tag">02</span> Вручную через DevTools <span class="guide-note">— без расширения</span></summary>
+          <summary><span class="guide-tag">2</span> Вручную через DevTools <span class="guide-note">— без расширения</span></summary>
           <ol>
             <li>Откройте <a href="https://accounts.google.com/o/android/auth?hl=en" target="_blank" rel="noopener">эту ссылку</a> в новой вкладке.</li>
             <li>Выберите нужный Google-аккаунт и пройдите вход (пароль / passkey / 2FA — как обычно).</li>
@@ -153,7 +158,7 @@
             <strong>Завершить сессию</strong>
             <span>Удаляет локальный файл учётных данных GHunt.</span>
           </div>
-          <button class="danger" id="logoutBtn">Logout</button>
+          <button class="danger" id="logoutBtn">Выйти</button>
         </div>
         <div class="result" data-result="logout"></div>
       </section>
