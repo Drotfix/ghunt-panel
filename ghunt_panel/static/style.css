@@ -535,35 +535,20 @@ a:hover { text-decoration: underline; }
   color: var(--text);
 }
 
+/* Always-expanded structured section — no accordion, pure visual outline. */
 .pretty-sub {
-  border: 1px solid var(--border-soft);
-  border-radius: var(--radius);
-  padding: 2px 16px;
-  margin: 10px 0;
-  background: var(--surface);
+  margin: 16px 0 6px;
+  padding-left: 16px;
+  border-left: 2px solid var(--border-soft);
 }
-.pretty-sub > summary {
-  cursor: pointer;
-  list-style: none;
-  padding: 10px 0;
-  font-weight: 500;
-  font-size: 13px;
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.pretty-sub .psummary {
+  font-weight: 600;
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  padding-bottom: 8px;
 }
-.pretty-sub > summary::-webkit-details-marker { display: none; }
-.pretty-sub > summary::before {
-  content: "";
-  width: 6px; height: 6px;
-  border-right: 1.5px solid var(--muted-2);
-  border-bottom: 1.5px solid var(--muted-2);
-  transform: rotate(-45deg);
-  transition: transform 0.15s ease;
-  flex-shrink: 0;
-}
-.pretty-sub[open] > summary::before { transform: rotate(45deg); border-color: var(--accent); }
 
 /* ---------- JSON toggle / tree ---------- */
 

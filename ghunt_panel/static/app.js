@@ -384,11 +384,9 @@ function buildPrettyCard(title, value, depth) {
     return card;
   }
 
-  const node = el("details", "pretty-sub");
-  node.open = depth < 3;
-  const summary = el("summary", "psummary");
-  summary.textContent = title;
-  node.appendChild(summary);
+  // Always-expanded structured section — no click-to-open, just visual nesting.
+  const node = el("div", "pretty-sub");
+  node.appendChild(el("div", "psummary", title));
   const body = el("div", "pbody nested");
   node.appendChild(body);
   appendPrettyChildren(body, value, depth);
