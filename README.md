@@ -11,8 +11,8 @@ This project does not reimplement any of GHunt's investigation logic — it shel
 the real `ghunt` binary and renders its `--json` output. All credit for the actual OSINT
 work goes to [mxrch/GHunt](https://github.com/mxrch/GHunt).
 
-![screenshot placeholder](docs/screenshot.png)
-> _Add a screenshot of the running panel here before publishing._
+![ghunt-panel screenshot](docs/screenshot.png)
+> _Shown with synthetic demo data — no real account was looked up for this screenshot._
 
 ## Features
 
